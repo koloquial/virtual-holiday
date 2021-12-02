@@ -26,7 +26,6 @@ function App() {
   const [snowCount, setSnowCount] = useState(50);
   const [enable, setEnable] = useState(false);
   const [music, setMusic] = useState('');
-  const [update, setUpdate] = useState(0);
 
   document.addEventListener('keydown', function(event) {
     if(enable){
@@ -101,8 +100,6 @@ function App() {
     setEnable(true);
   }
 
-
-
   return (
     <center>
       <Snowfall
@@ -119,27 +116,29 @@ function App() {
           <h1>Shirisha !</h1><br /><br /><br /><br />
 
           {slide === 0 ? (<>
+          <center>
   <h5>Click present to open</h5>
+  </center>
 </>) : (<></>)}
 
 {slide === 1 ? (<>
-  <h5>Neat... what is it?  First add water.</h5><br /><br />
   <center>
+  <h5>Neat... what is it?<br />First add water.</h5><br /><br />
   <button onClick={() => openPresent()}>Add Water</button>
   </center>
 </>) : (<></>)}
 
 {slide === 2 ? (<>
-  <h5>Oooo green things! Next make a wish!</h5><br /><br />
   <center>
-    <input type='text' size="50" />
+  <h5>Oooo green things!<br />Next make a wish!</h5><br /><br />
+    <input type='text' size="20" /><br />
   <button onClick={() => openPresent()}>Make a wish</button>
   </center>
 </>) : (<></>)}
 
 {slide === 3 ? (<>
-  <h5>Growth! Hold your breath count to three!</h5><br /><br />
   <center>
+  <h5>Growth!<br />Hold your breath count to three!</h5><br /><br />
   <button onClick={() => startCounter()}>Start!</button>
   </center>
 </>) : (<></>)}
@@ -168,13 +167,13 @@ function App() {
   <center>
   <h5>What's your favorite color ?</h5><br /><br />
     <input type='text' size="10" value={inputVal} onChange={onchange} />
-  <button onClick={() => changeSnow()}>IS MY FAVORITE!</button>
+  <button onClick={() => changeSnow()}>is my favorite!</button>
   </center>
 </>) : (<></>)}
 
 {slide === 8 ? (<>
   <center>
-  <h5>{bg.toUpperCase()} SNOW ! How delightful !</h5><br /><br />
+  <h5>{bg.toUpperCase()} SNOW ! <br />How delightful !</h5><br /><br />
   <h5>This special green squiggly needs MORE snow to GROW !</h5><br /><br />
   <button onClick={() => addSnow()}>LET IT SNOW!</button>
   </center>
@@ -191,11 +190,13 @@ function App() {
 {slide === 10 ? (<>
   <center>
   <h5>Perfect.</h5><br /><br />
-  <h5>Press the arrow keys in order to play its favorite jingle. </h5><br /><br />
-  RIGHT > RIGHT > LEFT > DOWN > LEFT > UP > RIGHT<br /><br />
+  <h5>Press the arrow keys in order to play our friend's favorite jingle. </h5><br /><br />
+  RIGHT > RIGHT > LEFT > <br />
+  DOWN > LEFT > UP > RIGHT<br /><br />
 
   <h5>your input:</h5><br />
   {music}
+  <br /><br />
   </center>
 </>) : (<></>)}
 
@@ -210,7 +211,9 @@ function App() {
 {slide === 12 ? (<>
   <center>
   <h5>Ta-da!</h5><br /><br />
-  <h5>I hope your holiday season is safe, warm, and bright and may this digital peace lily bring you joy.</h5><br /><br />
+  <h5>I hope your December season is safe and bright.<br />
+  May this digital peace lily bring you joy and <br />
+  prosperity thoughout the season and into next year.</h5><br /><br />
   </center>
 </>) : (<></>)}
             
