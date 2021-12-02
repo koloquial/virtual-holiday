@@ -102,11 +102,14 @@ function App() {
 
   return (
     <center>
-      <Snowfall
-      color={bg}
-      style={{ background: 'transparent' }}
-      snowflakeCount={snowCount}
-      />
+      {slide > 7 ? (
+         <Snowfall
+         color={bg}
+         style={{ background: 'transparent' }}
+         snowflakeCount={snowCount}
+         />
+      ) : (<></>)}
+     
       <br /><br /><br /><br />
       <div style={{border: '6px double gold', margin: '0', top: '10%', width: '80%', backgroundColor: 'rgb(116, 116, 116)'}}>
       <table>
@@ -174,7 +177,7 @@ function App() {
 {slide === 8 ? (<>
   <center>
   <h5>{bg.toUpperCase()} SNOW ! <br />How delightful !</h5><br /><br />
-  <h5>This special green squiggly needs MORE snow to GROW !</h5><br /><br />
+  <h5>This special green squiggly needs more snow to grow !</h5><br /><br />
   <button onClick={() => addSnow()}>LET IT SNOW!</button>
   </center>
 </>) : (<></>)}
